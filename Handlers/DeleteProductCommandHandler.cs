@@ -21,11 +21,13 @@ namespace MicroService.Handlers
             if (productToDelete != null)
             {
                 await _repository.DeleteAsync(productToDelete);
+                await _repository.SaveAsync();
             }
             else
             {
                 throw new Exception("Product not found"); // Handle product not found scenario
             }
+
         }
     }
 

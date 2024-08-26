@@ -27,6 +27,7 @@ namespace MicroService.Handlers
 
                 // Save changes to the repository
                 await _repository.UpdateAsync(productToUpdate);
+                await _repository.SaveAsync();
             }
             else
             {
